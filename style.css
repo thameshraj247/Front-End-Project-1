@@ -1,0 +1,510 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  --primary-color: #9b5de0;
+  --secondary-color: #ffc107;
+  --dark-color: #212127;
+  --light-color: #ecf0f1;
+  --white: #ffffff;
+  --light-gray: #bdc3c7;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+  --rating: #696fc7;
+}
+body {
+  font-family: "Queen Sansson", sans-serif;
+  line-height: 1.6;
+  background-color: var(--dark-color);
+  background-color: #f8f9fa;
+}
+.header {
+  background: var(--white);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+.header-container {
+  max-width: 1200px;
+  max-height: 95px;
+  margin: 0 auto;
+  padding: 0rem 0rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.logo {
+  font-size: 2rem;
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-left: -3.2rem;
+}
+.logo-image img {
+  height: 5rem;
+  width: 7rem;
+}
+.location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+.location::before {
+  content: "📍";
+  font-size: 1.2rem;
+}
+.search-container {
+  max-width: 400px;
+  flex: 1;
+  margin: 0 2rem;
+  position: relative;
+}
+.search {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--light-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+.search:focus {
+  border-color: var(--light-color);
+  outline: none;
+  box-shadow: 0 2px 7px rgb(148, 145, 145);
+}
+.cart-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.cart-icon {
+  text-decoration: none;
+  font-size: 1.5rem;
+  position: relative;
+  border-radius: 8px;
+  padding: 0.2rem 0.5rem;
+  background: rgb(231, 226, 226);
+  color: var(--white);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.cart-icon:hover {
+  opacity: 0.8;
+}
+.cart-count {
+  position: absolute;
+  top: -13px;
+  left: 37px;
+  font-size: 0.8rem;
+  padding: 2px 7px;
+  border-radius: 50%;
+  background: #d78fee;
+  color: #ffffff;
+}
+.cart-count:hover {
+  opacity: 1;
+}
+.hero {
+  color: var(--white);
+  padding: 4rem 0;
+  text-align: center;
+  display: flex;
+  z-index: -900;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 999;
+  background: orange;
+}
+
+.vid {
+  position: absolute;
+  max-width: 90%;
+  max-height: 350px;
+  z-index: -1;
+  left: 0;
+  top: 0.1rem;
+}
+.vid1 {
+  position: absolute;
+  max-width: 50%;
+  max-height: 350px;
+  z-index: -1;
+  left: 28.5rem;
+  top: 0.1rem;
+}
+.vid2 {
+  position: absolute;
+  max-width: 90%;
+  top: 0.1rem;
+  max-height: 350px;
+  z-index: -1;
+  right: 0rem;
+  overlay: hidden;
+}
+
+.hero-container h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  z-index: 999;
+  color: var(--light-color);
+  text-shadow: 0px 2px 5px rgb(46, 45, 45);
+  text-align: center;
+}
+.hero-container p {
+  font-size: 1.2rem;
+  z-index: 999;
+  margin-bottom: 2rem;
+  color: rgb(255, 255, 255);
+  text-shadow: 0px 2px 5px rgb(46, 45, 45);
+  text-align: center;
+  padding-left: 4rem;
+}
+.cta-button {
+  z-index: 999;
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: rgb(215, 26, 26);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  transition: all 0.3s;
+}
+.cta-button:hover {
+  background-color: #f8553a;
+  color: var(--white);
+  border: 1px solid white;
+  font-size: 1.2rem;
+  transition: 0.5s;
+  transform: scale(0.8);
+}
+
+.catagories {
+  padding: 1rem 0;
+  background-color: var(--white);
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  margin-top: -2rem;
+  text-align: center;
+  color: var(--dark-color);
+}
+.catogaries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: -0.5rem;
+}
+.card-container {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.card-container h3 {
+  padding-top: 3rem;
+  color: var(--dark-color);
+  font-weight: bolder;
+}
+.card-container p {
+  padding-top: 1rem;
+  color: rgb(126, 123, 123);
+  text-align: center;
+}
+.card-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+}
+.catagories-img1 {
+  content: url(https://madhurasrecipe.com/wp-content/uploads/2022/12/Chicken-Biryani-Featured.jpg);
+  max-height: auto-fit;
+  max-width: 214px;
+  margin: -2rem;
+  border-radius: var(--border-radius);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.catagories-img2 {
+  content: url(https://as2.ftcdn.net/v2/jpg/03/22/27/43/1000_F_322274314_MEln9YzXVGc35pXYz4hqkFzJzvGMgmvt.jpg);
+  max-height: auto-fit;
+  max-width: 214px;
+  margin: -2rem;
+  border-radius: var(--border-radius);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.catagories-img3 {
+  content: url(https://tse2.mm.bing.net/th/id/OIP.CMiJRC_8-hwbXo5E2accXgHaEK?pid=Api&P=0&h=180);
+  height: 143px;
+  max-width: 214px;
+  margin: -2rem;
+  border-radius: var(--border-radius);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.catagories-img4 {
+  content: url(https://wallpapercave.com/wp/wp9481144.jpg);
+  max-height: auto-fit;
+  max-width: 214px;
+  margin: -2rem;
+  border-radius: var(--border-radius);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.catagories-img5 {
+  content: url(https://tse2.mm.bing.net/th/id/OIP.vAAyknzfmfFt1pyifMxOYgHaEo?pid=Api&P=0&h=180);
+  height: 143px;
+  max-width: 214px;
+  margin: -2rem;
+  border-radius: var(--border-radius);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.restaurants {
+  padding: 1.5rem 0;
+  background: #f8f9fa;
+}
+.restaurant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+.restaurant-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: all 0.3s;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+.restaurant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+}
+.restaurant-img img {
+  width: 100%;
+  height: 200px;
+  /* object-fit: full; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: var(--white);
+}
+.restaurant-details {
+  padding: 1.5rem;
+}
+.restaurant-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--dark-color);
+}
+.restaurant-cuisine {
+  color: gray;
+  margin-bottom: 1rem;
+}
+.restaurant-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background-color: var(--rating);
+  color: var(--white);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+}
+.delivery-time {
+  color: gray;
+  font-size: 0.9rem;
+}
+
+.menu {
+  padding: 1.5rem 0;
+  background: #f8f9fa;
+}
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+.menu-item {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: all 0.3s;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+}
+.section-title {
+  padding: 1rem;
+  margin-top: 1rem;
+}
+.menu-img img {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: var(--white);
+}
+.menu-details {
+  padding: 1.5rem;
+}
+.menu-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--dark-color);
+}
+.menu-description {
+  color: gray;
+  margin-bottom: 1rem;
+}
+.menu-footer {
+  display: flex;
+  justify-content: space-between;
+}
+.menu-price {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+.add-button {
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-color);
+  color: var(--white);
+  outline: none;
+  border: 1px solid var(--primary-color);
+  font-size: 1.1rem;
+}
+.add-button:hover {
+  transition: all 0.3s;
+  transform: translateY(-4px);
+  box-shadow: 0 0px 10px rgb(155, 150, 150);
+  cursor: pointer;
+}
+
+.offer {
+  padding: 1.5rem 0;
+  background: #f8f9fa;
+}
+
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.offer-item {
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: all 0.3s;
+  cursor: pointer;
+  padding: 3rem 1.5rem;
+}
+.offer-per {
+  text-align: center;
+  padding: 0rem 0;
+  color: var(--white);
+  font-weight: bolder;
+}
+
+.offer-description {
+  text-align: center;
+  padding: 0.5rem 0;
+  color: var(--white);
+}
+.offer-code {
+  text-align: center;
+  padding: 0.5rem 0;
+  color: var(--primary-color);
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  font-weight: bold;
+}
+.offer-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+.footer {
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  background: #1a2a4f;
+}
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  padding-bottom: 2rem;
+}
+.footer-items li,
+p {
+  color: var(--white);
+  display: flex;
+  text-align: start;
+}
+.footer-items h3 {
+  color: var(--secondary-color);
+  padding: 1.5rem 0;
+}
+.final-footer {
+  display: flex;
+  justify-content: center;
+}
+.footer-bottom {
+  padding-top: 2rem;
+}
+a {
+  text-decoration-line: none;
+}
+@keyframes appear {
+  from {
+    scale: 0.1;
+    opacity: 0.1;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+section {
+  animation: appear ease-in-out;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
